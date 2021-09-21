@@ -30,7 +30,7 @@ public class ProductController {
   }
 
   @PostMapping
-  public Product create(@RequestBody @Valid ProductDTO product) {
+  public Product create(@Valid @RequestBody ProductDTO product) {
     return this.repository.save(product.toEntity());
   }
 
