@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,6 +38,7 @@ public class MethodArgumentNotValidExceptionHandler {
     return new Error(HttpStatus.BAD_REQUEST, ex.getMessage(), errorList);
   }
 
+  @Schema(hidden = true)
   @Data
   @NoArgsConstructor
   @AllArgsConstructor
